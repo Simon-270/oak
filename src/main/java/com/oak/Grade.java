@@ -37,8 +37,13 @@ public class Grade {
    public void addGrade(String grade){
        results.put(grade, results.getOrDefault(grade, 0) + 1);
    }
+   public void addGrade(String grade,int count){
+        results.put(grade, results.getOrDefault(grade, 0) + count);
+    }
+
    public double getGpa(){
        int count = 0;
+       gpa =0;
        for (var grade : results.entrySet()){
            gpa += grade.getValue()* determineGradeValue(grade.getKey());
            count += grade.getValue();

@@ -23,6 +23,9 @@ public class StudentRepository {
         return null;
     }
 
+    void addStudent(Student s){
+        students.add(s);
+    }
     @PostConstruct
     private void init(){
         students.add(new Student("A0014652","Fort Wallis", new Grade()));
@@ -44,7 +47,5 @@ public class StudentRepository {
         students.get(2).grades().addGrade("A+");
         students.get(2).grades().addGrade("C+");
 
-        students.get(3).grades().addGrade("C");
-        students.get(3).grades().addGrade("C+");
     }
 }

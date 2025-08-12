@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col"> &nbsp;
+        </div>
+        <div class="col">&nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <div class="form-group">
+                <select class="btn btn-secondary dropdown-toggle" id="myCombobox">
+                    <option>A+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>DNQ</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <input type="text" class="form-control" id="myTextbox" placeholder="Type here">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary" onclick="addItem()">Add Grade</button>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-2" >
+            <ul class="list-group" id="myGradeList">   </ul>
+        </div>
+    </div>
+
+    <script>
+        function addItem() {
+          // Get a reference to the list
+          const shoppingList = document.getElementById('myGradeList');
+
+          // Create a new list item
+          const newItem = document.createElement('li');
+          newItem.classList.add('list-group-item');//set the style
+
+          // Set the content of the new list item
+          const myTextbox = document.getElementById('myTextbox');
+          const textboxText = myTextbox.value;
+          const myCombobox = document.getElementById('myCombobox');
+          const selectedIndex = myCombobox.selectedIndex; // Get the index of the selected option
+          const comboboxText = myCombobox.options[selectedIndex].text;
+          newItem.textContent = comboboxText+'   '+textboxText ;
+
+          // Append the new list item to the list
+          shoppingList.appendChild(newItem);
+        }
+    </script>
+</div>
+</body>
+</html>

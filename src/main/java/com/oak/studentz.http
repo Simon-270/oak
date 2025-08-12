@@ -1,0 +1,1 @@
+curl -X POST --header "Content-Type: application/json"    -d "{\"id\": \"A0005426\",\"name\": \"James Bond\",\"grades\": {\"results\":{\"A+\":\"1\",\"B\":\"2\",\"C+\":\"3\"},\"gpa\": 0}}" http://localhost:8080/api/students
